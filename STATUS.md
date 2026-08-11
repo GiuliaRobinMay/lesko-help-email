@@ -1,0 +1,52 @@
+# Handoff state — Lesko Help onboarding emails
+
+_Last updated: 2026-08-11. This file lets any session pick up exactly where we left off._
+
+## Immediate next action
+
+Push the rebuilt email 1 to Kit via the Kit MCP:
+
+- Call `update_sequence_email` with:
+  - `sequence_id`: **2818978** (the empty sandbox sequence named "Sequence", 0 subscribers)
+  - `id`: **10185361** (the existing draft, unpublished)
+  - `subject`: `Welcome to Lesko Help! Start here`
+  - `preview_text`: `We made you an amazing Roadmap. Take your first look today.`
+  - `content`: full contents of **`emails/kit/01-welcome.html`** (already built, dash-free, uses `{{ subscriber.first_name }}`)
+- Then give Giulia https://app.kit.com/sequences/2818978 to review + send herself a test.
+
+## Kit account facts
+
+- Live sequence: "00 FINAL | New Email New Member Onboarding" id **2691903** (10 emails, ~3,441 subs, DO NOT touch until Giulia approves the new set).
+- Sandbox sequence: "Sequence" id **2818978** — our draft workspace.
+- Templates: only Kit starting-point templates + Classic "Text only" (id 4821884). No custom HTML template; MCP cannot create templates. `email_template_id` param seemed ignored on create/update (email kept "V1" 4917344) — check visual result in Kit; switch per-email template in the editor's Styles tab if the wrapper interferes.
+- Content pushed via MCP must NOT contain `{{ message_content }}`, `{{ address }}`, `{{ unsubscribe_url }}` — `build.js` strips these into `emails/kit/*.html` automatically.
+
+## Content rules from Giulia (STRICT)
+
+- Matthew's voice, first person, talking directly to one member. No "I'm Matthew" intro (everyone knows him).
+- VERY simple, plain language (low-literacy audience). Motivational, personal, "we're going to guide you".
+- NO long dashes anywhere (build.js has a guard). Signature is "Talk soon, / Matthew" (no dash).
+- White background, wide layout (660px), larger text — done in build.js.
+- Personalization tag: `{{ subscriber.first_name }}` (plain, per Giulia).
+- Every email ends with a yellow "Tomorrow in your inbox" nudge teasing the next email.
+
+## Sequence plan (~8 emails, 1/day, replacing the old "21 days" framing)
+
+1. Day 1 (instant): Welcome & setup — Roadmap + photo/notifications/app + say hi. **BUILT, awaiting Giulia's review in Kit.**
+2. Day 2: Roadmap step 1 — Daily Welcome Tour (join live or watch video) — space 24366161
+3. Day 3: Roadmap steps 2–4 — Call Sheet three ways: Call Sheet Classes 24440881 (+instruction page), AI Grant Researcher 24461105, Questions Channel 24366155
+4. Day 4: Roadmap step 5 — Application Classes 24366189 (join + read instructions)
+5. Day 5: Roadmap step 6 — Group Coaching Classes 24366194
+6. Day 6: Roadmap step 7 — Ask Matthew Live 21948411
+7. Day 7: Business Hub 18083958
+8. Day 8: Resources + FAQ 20304678 + Success Stories 10351370 (maybe split into 9 emails)
+
+Giulia still owes us: app download link, business hub confirmation, resources/FAQ links, and per-email link checks. Go step by step, one email at a time; push each to the sandbox sequence as an unpublished draft for her review.
+
+## Repo layout
+
+- `build.js` — design system + all email content; `node build.js` regenerates everything.
+- `emails/*.html` — standalone versions (previews/screenshots).
+- `emails/kit/*.html` — Kit-ready content fragments to push via MCP.
+- `template/kit-master-template.html` — branded frame for one-off broadcasts (manual paste, not needed for the sequence).
+- `preview/index.html` — local gallery.
