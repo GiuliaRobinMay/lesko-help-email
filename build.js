@@ -192,7 +192,7 @@ const ps = html =>
 /* Greeting + the Kit editor slot ({{ message_content }} flows in here). */
 const greeting = () =>
   row(`
-    <p style="margin:0 0 6px;font-family:${SANS};font-size:17px;line-height:27px;color:${INK};">Hi {{ subscriber.first_name | default: "friend" }},</p>
+    <p style="margin:0 0 6px;font-family:${SANS};font-size:17px;line-height:27px;color:${INK};">Hi {{ subscriber.first_name }},</p>
     <div style="font-family:${SANS};font-size:17px;line-height:27px;color:${INK};">{{ message_content }}</div>`);
 
 /* The 4-color stripe divider. */
