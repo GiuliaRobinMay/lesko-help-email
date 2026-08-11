@@ -176,6 +176,13 @@ const cta = (text, url, secondary) =>
     '18px 46px'
   );
 
+/* Matthew's sign-off. */
+const signoff = () =>
+  row(`
+    <p style="margin:0;font-family:${SANS};font-size:16px;line-height:24px;color:${INK};">Talk soon,</p>
+    <p style="margin:4px 0 0;font-family:${SERIF};font-style:italic;font-weight:700;font-size:26px;color:${NAVY};">&mdash; Matthew</p>`,
+    '14px 46px 4px');
+
 /* Serif-italic P.S. line. */
 const ps = html =>
   para(`<span style="font-family:${SERIF};font-style:italic;font-size:16px;color:${NAVY};">P.S. — ${html}</span>`, {
@@ -317,23 +324,25 @@ const EMAILS = [
     dayLabel: 'Day 1 · right after you join',
     chipLabel: 'Welcome & setup',
     subject: 'Welcome to Lesko Help — start here',
-    preheader: `Explore the Roadmap, set up your profile, and come say hi. Takes 5 minutes.`,
+    preheader: `Your map is inside. Open it and do 3 small things today.`,
     footerNote: SERIES_NOTE,
     h1: `Welcome! You're in ${em('exactly the right place.')}`,
     blocks: [
       greeting(),
-      para(`We're so glad you made it. This community exists for one reason: government programs, grants, and free resources are real &mdash; but nobody hands you a map to find them. So we made the map. It's called <strong style="color:${NAVY};">the Roadmap</strong>, and it walks you from brand-new to money in motion in seven clear steps.`),
-      para(`Your very first job is simple: open it and see the whole path before you walk it.`),
-      cta('Explore the Roadmap &rarr;', LINKS.roadmap),
-      para(`Then, while you're in there, give yourself a head start with <strong style="color:${NAVY};">today's three-minute setup:</strong>`),
+      para(`I'm Matthew &mdash; and I'm really glad you're here.`),
+      para(`Free money from the government is real. Grants. Programs that help with bills, housing, starting a business, and much more. The money is there &mdash; it's just hard to find. So my team and I made you a map. We call it <strong style="color:${NAVY};">the Roadmap</strong>. It shows you the whole path, one step at a time.`),
+      para(`Your first job is easy: open the map and take a look.`),
+      cta('Open the Roadmap &rarr;', LINKS.roadmap),
+      para(`While you're in there, do these <strong style="color:${NAVY};">3 small things</strong> today:`),
       steps([
-        { n: 1, title: 'Set up your profile', text: `Add a photo and a line about what you're hoping to fund &mdash; members help members who feel real.` },
-        { n: 2, title: 'Adjust your notifications', text: `Choose what reaches you, so the community keeps you posted without flooding your inbox.` },
-        { n: 3, title: 'Download the app', text: `Take Lesko Help with you &mdash; classes, answers, and your Roadmap, right on your phone.` },
+        { n: 1, title: 'Add your photo', text: `Put a face to your name. Add one line about what you need money for.` },
+        { n: 2, title: 'Turn on notifications', text: `So you never miss an answer or a class.` },
+        { n: 3, title: 'Get the app', text: `So the community is right there in your pocket.` },
       ]),
-      callout('green', 'And come say hi', `Introduce yourself in the ${link(LINKS.sayHi, 'Member Chat')} &mdash; who you are and what you're hoping to fund. You'll be surprised how many people wave back.`),
-      callout('blue', 'The Lesko way', `Every program has a real person behind a desk whose job is to hand it out. Our job is to help you find their desk.`),
-      ps(`Tomorrow: Step 1 of the Roadmap &mdash; the Daily Welcome Tour, where we show you around live.`),
+      callout('green', 'Come say hi', `Tell us who you are in the ${link(LINKS.sayHi, 'Member Chat')}. Just say hi. You'll get a warm welcome &mdash; I promise.`),
+      callout('blue', 'The Lesko way', `Every program has a real person whose job is to hand out the money. We help you find that person.`),
+      signoff(),
+      ps(`Tomorrow I'll show you the first stop on the map: our daily Welcome Tour.`),
     ],
   },
 ];
