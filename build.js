@@ -33,13 +33,13 @@ const path = require('path');
 
 const NAVY = '#18234A';   // ink / headlines
 const INK = '#333D5C';    // body text
-const MUTED = '#8A8264';  // small print
+const MUTED = '#767E92';  // small print
 const RED = '#E63946';    // red coral accents
 const BLUE = '#2C3FA0';   // royal blue
 const YELLOW = '#FDC830'; // sunshine yellow
 const GREEN = '#4FA84F';  // green
-const CREAM = '#FBF6E9';  // paper (card background)
-const OUTER = '#F0E7D3';  // deeper cream (email background)
+const CREAM = '#FFFFFF';  // card background (white per Giulia's feedback)
+const OUTER = '#FFFFFF';  // email background (white per Giulia's feedback)
 
 const TINT = {
   yellow: '#FBF0CF',
@@ -93,12 +93,12 @@ const emailSuit = n => {
 };
 
 /* Content row inside the card. */
-const row = (inner, padding = '10px 46px') =>
+const row = (inner, padding = '10px 40px') =>
   `<tr><td class="px" style="padding:${padding};">${inner}</td></tr>`;
 
 const para = (html, opts = {}) =>
   row(
-    `<p style="margin:0;font-family:${SANS};font-size:${opts.size || 16}px;line-height:${opts.lh || 26}px;color:${opts.color || INK};">${html}</p>`,
+    `<p style="margin:0;font-family:${SANS};font-size:${opts.size || 17}px;line-height:${opts.lh || 27}px;color:${opts.color || INK};">${html}</p>`,
     opts.padding
   );
 
@@ -173,27 +173,27 @@ const cta = (text, url, secondary) =>
         ? `<p style="margin:14px 0 0;text-align:center;font-family:${SANS};font-size:14px;color:${INK};">${secondary.pre || ''} <a href="${secondary.url}" style="color:${BLUE};font-weight:700;">${secondary.text}</a></p>`
         : ''
     }`,
-    '18px 46px'
+    '18px 40px'
   );
 
 /* Matthew's sign-off. */
 const signoff = () =>
   row(`
-    <p style="margin:0;font-family:${SANS};font-size:16px;line-height:24px;color:${INK};">Talk soon,</p>
-    <p style="margin:4px 0 0;font-family:${SERIF};font-style:italic;font-weight:700;font-size:26px;color:${NAVY};">&mdash; Matthew</p>`,
-    '14px 46px 4px');
+    <p style="margin:0;font-family:${SANS};font-size:17px;line-height:25px;color:${INK};">Talk soon,</p>
+    <p style="margin:4px 0 0;font-family:${SERIF};font-style:italic;font-weight:700;font-size:26px;color:${NAVY};">Matthew</p>`,
+    '14px 40px 4px');
 
 /* Serif-italic P.S. line. */
 const ps = html =>
-  para(`<span style="font-family:${SERIF};font-style:italic;font-size:16px;color:${NAVY};">P.S. — ${html}</span>`, {
-    padding: '6px 46px 10px',
+  para(`<span style="font-family:${SERIF};font-style:italic;font-size:16px;color:${NAVY};">P.S. ${html}</span>`, {
+    padding: '6px 40px 10px',
   });
 
 /* Greeting + the Kit editor slot ({{ message_content }} flows in here). */
 const greeting = () =>
   row(`
-    <p style="margin:0 0 6px;font-family:${SANS};font-size:16px;line-height:26px;color:${INK};">Hi {{ subscriber.first_name | default: "there" }} &mdash;</p>
-    <div style="font-family:${SANS};font-size:16px;line-height:26px;color:${INK};">{{ message_content }}</div>`);
+    <p style="margin:0 0 6px;font-family:${SANS};font-size:17px;line-height:27px;color:${INK};">Hi {{ subscriber.first_name | default: "friend" }},</p>
+    <div style="font-family:${SANS};font-size:17px;line-height:27px;color:${INK};">{{ message_content }}</div>`);
 
 /* The 4-color stripe divider. */
 const stripe = () =>
@@ -204,7 +204,7 @@ const stripe = () =>
       <td width="25%" height="6" style="background-color:${GREEN};font-size:0;line-height:0;">&nbsp;</td>
       <td width="25%" height="6" style="background-color:${BLUE};font-size:0;line-height:0;">&nbsp;</td>
     </tr></table>`,
-    '26px 46px 0'
+    '26px 40px 0'
   );
 
 /* -------------------------------------------------------------- the frame */
@@ -234,8 +234,8 @@ function renderEmail(e) {
 <body style="margin:0;padding:0;background-color:${OUTER};">
 <div style="display:none;font-size:1px;color:${OUTER};line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">${e.preheader}${preheaderPad}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${OUTER}" style="background-color:${OUTER};">
-  <tr><td align="center" style="padding:32px 12px 24px;">
-    <table role="presentation" width="620" cellpadding="0" cellspacing="0" class="container" style="width:100%;max-width:620px;">
+  <tr><td align="center" style="padding:20px 8px 18px;">
+    <table role="presentation" width="660" cellpadding="0" cellspacing="0" class="container" style="width:100%;max-width:660px;">
 
       <!-- masthead: suits + wordmark -->
       <tr><td style="padding:0 10px 14px;">
@@ -250,7 +250,7 @@ function renderEmail(e) {
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
 
           <!-- chip row -->
-          <tr><td class="px" style="padding:38px 46px 0;">
+          <tr><td class="px" style="padding:32px 40px 0;">
             <table role="presentation" cellpadding="0" cellspacing="0"><tr>
               <td style="background-color:${NAVY};border-radius:4px;padding:6px 12px;font-family:${MONO};font-size:11px;font-weight:700;letter-spacing:2px;color:${YELLOW};text-transform:uppercase;">Email ${String(e.n).padStart(2, '0')} &middot; ${e.dayChip}</td>
               <td style="padding-left:14px;">${label(e.chipLabel)}</td>
@@ -258,7 +258,7 @@ function renderEmail(e) {
           </td></tr>
 
           <!-- headline + big question mark -->
-          <tr><td class="px" style="padding:22px 46px 6px;">
+          <tr><td class="px" style="padding:22px 40px 6px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td valign="top">
                 <div class="h1" style="font-family:${SERIF};font-size:38px;line-height:44px;font-weight:700;color:${NAVY};">${e.h1}</div>
@@ -274,7 +274,7 @@ function renderEmail(e) {
           ${stripe()}
 
           <!-- footer -->
-          <tr><td class="px" style="padding:22px 46px 34px;">
+          <tr><td class="px" style="padding:22px 40px 30px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="40" valign="middle">
                 <table role="presentation" cellpadding="0" cellspacing="0"><tr>
@@ -323,26 +323,26 @@ const EMAILS = [
     dayChip: 'Day 1',
     dayLabel: 'Day 1 · right after you join',
     chipLabel: 'Welcome & setup',
-    subject: 'Welcome to Lesko Help — start here',
-    preheader: `Your map is inside. Open it and do 3 small things today.`,
+    subject: 'Welcome to Lesko Help! Start here',
+    preheader: `We made you an amazing Roadmap. Take your first look today.`,
     footerNote: SERIES_NOTE,
     h1: `Welcome! You're in ${em('exactly the right place.')}`,
     blocks: [
       greeting(),
-      para(`I'm Matthew &mdash; and I'm really glad you're here.`),
-      para(`Free money from the government is real. Grants. Programs that help with bills, housing, starting a business, and much more. The money is there &mdash; it's just hard to find. So my team and I made you a map. We call it <strong style="color:${NAVY};">the Roadmap</strong>. It shows you the whole path, one step at a time.`),
-      para(`Your first job is easy: open the map and take a look.`),
+      para(`I'm so happy you're here. Really. You just did something most people never do: you stopped wondering if help exists, and you joined the place where people actually find it.`),
+      para(`And here's my promise to you: from today, you're not doing this alone. We're going to guide you, step by step. You'll always know what to do next.`),
+      para(`We created an amazing <strong style="color:${NAVY};">Roadmap</strong> for you. It shows you the whole path in simple steps. That's your very first stop. Go take a look, it only takes a few minutes:`),
       cta('Open the Roadmap &rarr;', LINKS.roadmap),
-      para(`While you're in there, do these <strong style="color:${NAVY};">3 small things</strong> today:`),
+      para(`Then, while you're in there, do these <strong style="color:${NAVY};">3 small things</strong> today:`),
       steps([
         { n: 1, title: 'Add your photo', text: `Put a face to your name. Add one line about what you need money for.` },
         { n: 2, title: 'Turn on notifications', text: `So you never miss an answer or a class.` },
         { n: 3, title: 'Get the app', text: `So the community is right there in your pocket.` },
       ]),
-      callout('green', 'Come say hi', `Tell us who you are in the ${link(LINKS.sayHi, 'Member Chat')}. Just say hi. You'll get a warm welcome &mdash; I promise.`),
+      callout('green', 'Come say hi', `Tell us who you are in the ${link(LINKS.sayHi, 'Member Chat')}. Just say hi. You'll get a warm welcome, I promise.`),
       callout('blue', 'The Lesko way', `Every program has a real person whose job is to hand out the money. We help you find that person.`),
       signoff(),
-      ps(`Tomorrow I'll show you the first stop on the map: our daily Welcome Tour.`),
+      callout('yellow', 'Tomorrow in your inbox', `I'll show you around the community, so you always know where everything is. Watch for my email!`),
     ],
   },
 ];
@@ -385,6 +385,26 @@ for (const f of fs.readdirSync(path.join(root, 'emails'))) {
 for (const e of EMAILS) {
   fs.writeFileSync(path.join(root, 'emails', e.file), renderEmail(e));
   console.log(`✓ emails/${e.file}`);
+}
+
+/* Kit-ready content fragments — what gets pushed via the Kit MCP as sequence
+   email content. Kit's own template supplies address + unsubscribe, so those
+   template-only tags are stripped here. */
+const toKitContent = html => {
+  let c = html.match(/<body[^>]*>([\s\S]*)<\/body>/)[1].trim();
+  c = c.replace(/\s*<div style="font-family:[^"]*">\{\{ message_content \}\}<\/div>/, '');
+  c = c.replace(/\{\{ address \}\}<br>\s*<a href="\{\{ unsubscribe_url \}\}"[^>]*>Unsubscribe<\/a> &nbsp;&middot;&nbsp; /, '');
+  return c;
+};
+fs.mkdirSync(path.join(root, 'emails', 'kit'), { recursive: true });
+for (const e of EMAILS) {
+  const c = toKitContent(renderEmail(e));
+  const visible = c.replace(/<!--[\s\S]*?-->/g, '');
+  if (/&mdash;|—|\{\{ message_content \}\}|\{\{ address \}\}|\{\{ unsubscribe_url \}\}/.test(visible)) {
+    console.warn(`⚠ emails/kit/${e.file}: leftover long dash or template-only tag!`);
+  }
+  fs.writeFileSync(path.join(root, 'emails', 'kit', e.file), c);
+  console.log(`✓ emails/kit/${e.file}`);
 }
 
 fs.writeFileSync(path.join(root, 'template', 'kit-master-template.html'), renderMasterTemplate());
