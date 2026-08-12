@@ -339,7 +339,7 @@ const EMAILS = [
       steps([
         { n: 1, title: 'Add your photo', text: `Put a face to your name. Add one line about what you need money for.` },
         { n: 2, title: 'Turn on notifications', text: `So you never miss an answer or a class.` },
-        { n: 3, title: 'Get the app', text: `So the community is right there in your pocket.` },
+        { n: 3, title: 'Get the app', text: `Search for <strong>Mighty Networks</strong> in your app store, install it, and sign in with this same email. Now the community is right there in your pocket.` },
       ]),
       callout('green', 'Come say hi', `Tell us who you are in the ${link(LINKS.sayHi, 'Member Chat')}. Just say hi. You'll get a warm welcome, I promise.`),
       callout('blue', 'The Lesko way', `Every program has a real person whose job is to hand out the money. We help you find that person.`),
