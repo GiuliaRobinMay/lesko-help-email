@@ -63,3 +63,4 @@ Giulia still owes us: app download link, business hub confirmation, resources/FA
 - 2026-08-12 13:59 UTC: email 7 'Dreaming of your own business?' pushed (kit id 10187998), unpublished.
 - 2026-08-12 13:59 UTC: email 8 'You made it! Here's your treasure map' pushed (kit id 10188000), unpublished.
 - 2026-08-12 13:59 UTC: verified all 8 emails present in sequence 2818978, positions 0-7, delays 0d then 1d each, all unpublished.
+- 2026-08-12 14:02 UTC: email 1 re-pushed with app-store instructions (no download URL exists); still unpublished.
