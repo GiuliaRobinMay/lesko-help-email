@@ -54,3 +54,12 @@ Giulia still owes us: app download link, business hub confirmation, resources/FA
 ## Push log
 
 - 2026-08-12 10:56 UTC: email 1 v3 pushed to Kit draft (seq 2818978 / email 10185361), content verified, left unpublished.
+- 2026-08-12 13:59 UTC: email 1 'Welcome to Lesko Help! Start here' pushed (kit id 10185361, updated in place), unpublished.
+- 2026-08-12 13:59 UTC: email 2 'Your first step: take the tour' pushed (kit id 10187983), unpublished.
+- 2026-08-12 13:59 UTC: email 3 'Let's build your list (this is the big one)' pushed (kit id 10187986), unpublished.
+- 2026-08-12 13:59 UTC: email 4 'You found programs. Now what?' pushed (kit id 10187990), unpublished.
+- 2026-08-12 13:59 UTC: email 5 'Stuck? This is where you get unstuck' pushed (kit id 10187994), unpublished.
+- 2026-08-12 13:59 UTC: email 6 'Come talk to me. Yes, really' pushed (kit id 10187996), unpublished.
+- 2026-08-12 13:59 UTC: email 7 'Dreaming of your own business?' pushed (kit id 10187998), unpublished.
+- 2026-08-12 13:59 UTC: email 8 'You made it! Here's your treasure map' pushed (kit id 10188000), unpublished.
+- 2026-08-12 13:59 UTC: verified all 8 emails present in sequence 2818978, positions 0-7, delays 0d then 1d each, all unpublished.
