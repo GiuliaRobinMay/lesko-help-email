@@ -540,27 +540,35 @@ for (const e of EMAILS) {
 }
 
 /* Kit-ready content fragments — what gets pushed via the Kit MCP as sequence
-   email content. Kit's own template supplies address + unsubscribe, so those
-   template-only tags are stripped here. */
+   email content. Only {{ message_content }} is dropped (that slot belongs to a
+   template, not to a finished email). Kit REQUIRES {{ unsubscribe_url }} in the
+   email body before a sequence can be published, so address + unsubscribe stay. */
 const toKitContent = html => {
-  let c = html.match(/<body[^>]*>([\s\S]*)<\/body>/)[1].trim();
-  c = c.replace(/\s*<div style="font-family:[^"]*">\{\{ message_content \}\}<\/div>/, '');
-  c = c.replace(/\{\{ address \}\}<br>\s*<a href="\{\{ unsubscribe_url \}\}"[^>]*>Unsubscribe<\/a> &nbsp;&middot;&nbsp; /, '');
-  return c;
+  const body = html.match(/<body[^>]*>([\s\S]*)<\/body>/)[1].trim();
+  return body.replace(/\s*<div style="font-family:[^"]*">\{\{ message_content \}\}<\/div>/, '');
 };
 fs.mkdirSync(path.join(root, 'emails', 'kit'), { recursive: true });
 for (const e of EMAILS) {
   const c = toKitContent(renderEmail(e));
   const visible = c.replace(/<!--[\s\S]*?-->/g, '');
-  if (/&mdash;|—|\{\{ message_content \}\}|\{\{ address \}\}|\{\{ unsubscribe_url \}\}/.test(visible)) {
-    console.warn(`⚠ emails/kit/${e.file}: leftover long dash or template-only tag!`);
-  }
+  if (/&mdash;|—/.test(visible)) console.warn(`⚠ emails/kit/${e.file}: long dash found!`);
+  if (visible.includes('{{ message_content }}')) console.warn(`⚠ emails/kit/${e.file}: message_content left in!`);
+  if (!visible.includes('{{ unsubscribe_url }}')) console.warn(`⚠ emails/kit/${e.file}: MISSING unsubscribe tag, Kit will refuse to publish!`);
   fs.writeFileSync(path.join(root, 'emails', 'kit', e.file), c);
   console.log(`✓ emails/kit/${e.file}`);
 }
 
-/* Machine-readable push manifest for the Kit helper session. */
+/* Machine-readable push manifest for the Kit helper session. Kit email ids
+   already recorded in the manifest are preserved so re-pushes update the same
+   drafts instead of creating duplicates. */
 const KIT_SEQUENCE_ID = 2818978;
+const manifestPath = path.join(root, 'emails', 'kit', 'manifest.json');
+let knownIds = {};
+try {
+  knownIds = Object.fromEntries(
+    JSON.parse(fs.readFileSync(manifestPath, 'utf8')).emails.map(e => [e.n, e.kit_email_id])
+  );
+} catch {}
 fs.writeFileSync(
   path.join(root, 'emails', 'kit', 'manifest.json'),
   JSON.stringify(
@@ -574,7 +582,7 @@ fs.writeFileSync(
         preview_text: e.preheader,
         delay_value: e.n === 1 ? 0 : 1,
         delay_unit: 'days',
-        kit_email_id: e.kitEmailId || null,
+        kit_email_id: knownIds[e.n] || e.kitEmailId || null,
       })),
     },
     null,
