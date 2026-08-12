@@ -50,3 +50,7 @@ Giulia still owes us: app download link, business hub confirmation, resources/FA
 - `emails/kit/*.html` — Kit-ready content fragments to push via MCP.
 - `template/kit-master-template.html` — branded frame for one-off broadcasts (manual paste, not needed for the sequence).
 - `preview/index.html` — local gallery.
+
+## Push log
+
+- 2026-08-12 10:56 UTC: email 1 v3 pushed to Kit draft (seq 2818978 / email 10185361), content verified, left unpublished.
