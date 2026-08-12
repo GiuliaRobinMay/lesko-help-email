@@ -1,0 +1,78 @@
+{
+  "sequence_id": 2818978,
+  "note": "kit_email_id null = create as new unpublished draft; otherwise update that email in place. Content = the matching file in this folder, verbatim.",
+  "emails": [
+    {
+      "n": 1,
+      "file": "01-welcome.html",
+      "subject": "Welcome to Lesko Help! Start here",
+      "preview_text": "We made you an amazing Roadmap. Take your first look today.",
+      "delay_value": 0,
+      "delay_unit": "days",
+      "kit_email_id": 10185361
+    },
+    {
+      "n": 2,
+      "file": "02-welcome-tour.html",
+      "subject": "Your first step: take the tour",
+      "preview_text": "Live or on video. In 30 minutes you'll know your way around.",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    },
+    {
+      "n": 3,
+      "file": "03-call-sheet.html",
+      "subject": "Let's build your list (this is the big one)",
+      "preview_text": "Your Call Sheet is your personal list of programs. Build it today, 3 easy ways.",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    },
+    {
+      "n": 4,
+      "file": "04-applications.html",
+      "subject": "You found programs. Now what?",
+      "preview_text": "Applications are how you ask for the money. We do them together.",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    },
+    {
+      "n": 5,
+      "file": "05-group-coaching.html",
+      "subject": "Stuck? This is where you get unstuck",
+      "preview_text": "Real coaches, live answers. Bring your question.",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    },
+    {
+      "n": 6,
+      "file": "06-ask-matthew.html",
+      "subject": "Come talk to me. Yes, really",
+      "preview_text": "I do a live session where you can ask me anything. Come!",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    },
+    {
+      "n": 7,
+      "file": "07-business-hub.html",
+      "subject": "Dreaming of your own business?",
+      "preview_text": "Programs and help for starting your own business or nonprofit.",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    },
+    {
+      "n": 8,
+      "file": "08-keep-exploring.html",
+      "subject": "You made it! Here's your treasure map",
+      "preview_text": "Quick guides, answers, and stories from members who got their yes.",
+      "delay_value": 1,
+      "delay_unit": "days",
+      "kit_email_id": null
+    }
+  ]
+}

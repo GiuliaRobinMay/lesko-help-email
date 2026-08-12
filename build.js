@@ -39,7 +39,7 @@ const BLUE = '#2C3FA0';   // royal blue
 const YELLOW = '#FDC830'; // sunshine yellow
 const GREEN = '#4FA84F';  // green
 const CREAM = '#FFFFFF';  // card background (white per Giulia's feedback)
-const OUTER = '#FFFFFF';  // email background (white per Giulia's feedback)
+const OUTER = '#F5F4EF';  // page background: very soft neutral off-white, distinct from the white card
 
 const TINT = {
   yellow: '#FBF0CF',
@@ -73,6 +73,7 @@ const LINKS = {
   meetTeam: 'https://lesko-help-2.mn.co/spaces/11054358',
   businessHub: 'https://lesko-help-2.mn.co/spaces/18083958',    // Business - Nonprofits & Career
   faqZone: 'https://lesko-help-2.mn.co/spaces/20304678',
+  grantBasics: 'https://lesko-help-2.mn.co/spaces/16590945',    // Grant Basics (Quick Guide Library)
 };
 
 /* ----------------------------------------------------------- small pieces */
@@ -246,7 +247,7 @@ function renderEmail(e) {
       </td></tr>
 
       <!-- the card -->
-      <tr><td style="background-color:${CREAM};border:2px solid ${NAVY};border-radius:16px;">
+      <tr><td style="background-color:${CREAM};border:1px solid ${NAVY};border-radius:16px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
 
           <!-- chip row -->
@@ -320,6 +321,7 @@ const EMAILS = [
   {
     n: 1,
     file: '01-welcome.html',
+    kitEmailId: 10185361,
     dayChip: 'Day 1',
     dayLabel: 'Day 1 · right after you join',
     chipLabel: 'Welcome & setup',
@@ -343,6 +345,156 @@ const EMAILS = [
       callout('blue', 'The Lesko way', `Every program has a real person whose job is to hand out the money. We help you find that person.`),
       signoff(),
       callout('yellow', 'Tomorrow in your inbox', `I'll show you around the community, so you always know where everything is. Watch for my email!`),
+    ],
+  },
+  {
+    n: 2,
+    file: '02-welcome-tour.html',
+    dayChip: 'Day 2',
+    dayLabel: 'Day 2 · the welcome tour',
+    chipLabel: 'Roadmap step 1',
+    subject: 'Your first step: take the tour',
+    preheader: `Live or on video. In 30 minutes you'll know your way around.`,
+    footerNote: SERIES_NOTE,
+    h1: `Let me ${em('show you around.')}`,
+    blocks: [
+      greeting(),
+      para(`How was your first look at the Roadmap? Today we take step 1, and it's the easiest one: the Welcome Tour.`),
+      para(`Every day, my team gives a live tour of the community. We show you where everything is. You can ask anything you want. It takes about 30 minutes, and you leave knowing your way around.`),
+      cta('Join the Daily Welcome Tour &rarr;', LINKS.welcomeTour),
+      callout('blue', `Can't make it live?`, `No problem. There's a short video in the same place. Watch it whenever suits you. Same tour, your couch.`),
+      signoff(),
+      callout('yellow', 'Tomorrow in your inbox', `We build your Call Sheet. That's your personal list of programs that fit YOU. It's where the money search really starts.`),
+    ],
+  },
+  {
+    n: 3,
+    file: '03-call-sheet.html',
+    dayChip: 'Day 3',
+    dayLabel: 'Day 3 · your call sheet',
+    chipLabel: 'Your call sheet',
+    subject: `Let's build your list (this is the big one)`,
+    preheader: `Your Call Sheet is your personal list of programs. Build it today, 3 easy ways.`,
+    footerNote: SERIES_NOTE,
+    h1: `Today we build ${em('your list.')}`,
+    blocks: [
+      greeting(),
+      para(`Everything starts with your <strong style="color:${NAVY};">Call Sheet</strong>. It's a simple list of programs and offices that fit you: your state, your needs, your situation. When you have your list, you know exactly who to call.`),
+      para(`There are 3 ways to build yours. Pick the one that feels easiest:`),
+      steps([
+        { n: 1, title: 'Come to a Call Sheet Class', text: `We build your list together, live. There's also a simple instruction page in the ${link(LINKS.callSheetClasses, 'same space')}.` },
+        { n: 2, title: 'Use the AI Grant Researcher', text: `Tell it what you need. It digs through the programs for you. ${link(LINKS.aiResearcher, 'Try it here')}.` },
+        { n: 3, title: 'Ask in the Questions Channel', text: `Not sure where to start? Just ask. My team answers every day. ${link(LINKS.questions, 'Ask here')}.` },
+      ]),
+      cta('Start my Call Sheet &rarr;', LINKS.callSheetClasses),
+      callout('blue', 'No wrong choice', `All three roads end in the same place: your own list. Pick one and start today.`),
+      signoff(),
+      callout('yellow', 'Tomorrow in your inbox', `What to do with your list. This is the step where most people stop. Not you.`),
+    ],
+  },
+  {
+    n: 4,
+    file: '04-applications.html',
+    dayChip: 'Day 4',
+    dayLabel: 'Day 4 · applications',
+    chipLabel: 'Roadmap step 5',
+    subject: 'You found programs. Now what?',
+    preheader: `Applications are how you ask for the money. We do them together.`,
+    footerNote: SERIES_NOTE,
+    h1: `Now we apply. ${em('Together.')}`,
+    blocks: [
+      greeting(),
+      para(`When your list is ready, the next step is asking for the money. That means applications. And I know, forms are nobody's favorite thing. That's why here, we don't do them alone.`),
+      para(`In our <strong style="color:${NAVY};">Application Classes</strong> we go through real applications together, step by step. Bring yours, or just watch and learn. Start with the instruction page, then join a class.`),
+      cta('Go to Application Classes &rarr;', LINKS.applicationClasses),
+      callout('red', 'The truth about applications', `A sent application can get a yes. A perfect application sitting on your desk cannot. Send it in.`),
+      signoff(),
+      callout('yellow', 'Tomorrow in your inbox', `I'll introduce you to our Group Coaching. Real coaches, real answers, every week.`),
+    ],
+  },
+  {
+    n: 5,
+    file: '05-group-coaching.html',
+    dayChip: 'Day 5',
+    dayLabel: 'Day 5 · group coaching',
+    chipLabel: 'Roadmap step 6',
+    subject: 'Stuck? This is where you get unstuck',
+    preheader: `Real coaches, live answers. Bring your question.`,
+    footerNote: SERIES_NOTE,
+    h1: `Bring us ${em('your questions.')}`,
+    blocks: [
+      greeting(),
+      para(`By now you know the path: your list, then your calls, then your applications. And somewhere on that path, everyone gets stuck. Everyone. That's normal.`),
+      para(`That's what our <strong style="color:${NAVY};">Group Coaching Classes</strong> are for. Real coaches, live. You ask, they answer. You can also just listen. Members tell us this is where things finally click.`),
+      cta('Join a Group Coaching Class &rarr;', LINKS.groupCoaching),
+      callout('green', 'No question is too small', `"Where do I even start?" is a great question. We hear it every day. Come ask yours.`),
+      signoff(),
+      callout('yellow', 'Tomorrow in your inbox', `The man himself. I'll tell you about Ask Matthew Live.`),
+    ],
+  },
+  {
+    n: 6,
+    file: '06-ask-matthew.html',
+    dayChip: 'Day 6',
+    dayLabel: 'Day 6 · ask matthew live',
+    chipLabel: 'Roadmap step 7',
+    subject: 'Come talk to me. Yes, really',
+    preheader: `I do a live session where you can ask me anything. Come!`,
+    footerNote: SERIES_NOTE,
+    h1: `Ask me anything. ${em('Live.')}`,
+    blocks: [
+      greeting(),
+      para(`I do a live session where you can ask me anything. About money, about programs, about your situation. I've been doing this for more than 40 years, and I still love every question.`),
+      para(`Come once, and you'll understand what this community is all about. Bring a question, or just come listen and get inspired.`),
+      cta('Join Ask Matthew Live &rarr;', LINKS.askMatthew),
+      callout('blue', 'Why I do this', `Because questions are free. Always were. The only expensive thing is not asking.`),
+      signoff(),
+      callout('yellow', 'Tomorrow in your inbox', `Something special for everyone who dreams of their own business or nonprofit.`),
+    ],
+  },
+  {
+    n: 7,
+    file: '07-business-hub.html',
+    dayChip: 'Day 7',
+    dayLabel: 'Day 7 · business hub',
+    chipLabel: 'Business hub',
+    subject: 'Dreaming of your own business?',
+    preheader: `Programs and help for starting your own business or nonprofit.`,
+    footerNote: SERIES_NOTE,
+    h1: `Money to ${em('start something.')}`,
+    blocks: [
+      greeting(),
+      para(`Lots of members come here with a dream: their own business. Their own nonprofit. A fresh start in their career. If that's you, today's stop is your new favorite place.`),
+      para(`Our <strong style="color:${NAVY};">Business Hub</strong> is full of help for starting and growing: programs, classes, and people who have done it before you.`),
+      cta('Explore the Business Hub &rarr;', LINKS.businessHub),
+      callout('green', 'Not your dream? No problem', `Skip this one. Your Roadmap works for bills, housing, and everything else too. Tomorrow's email is for everyone.`),
+      signoff(),
+      callout('yellow', 'Tomorrow in your inbox', `Our last stop: all the extra treasures in the community, in one email. Don't miss it.`),
+    ],
+  },
+  {
+    n: 8,
+    file: '08-keep-exploring.html',
+    dayChip: 'Day 8',
+    dayLabel: 'Day 8 · keep exploring',
+    chipLabel: 'Keep exploring',
+    subject: `You made it! Here's your treasure map`,
+    preheader: `Quick guides, answers, and stories from members who got their yes.`,
+    footerNote: SERIES_NOTE,
+    h1: `You know the way. ${em('Keep going.')}`,
+    blocks: [
+      greeting(),
+      para(`Eight days ago you were new here. Now look at you: you know the Roadmap, your list, the classes, and the people. I'm proud of you. Really.`),
+      para(`Before I let you go, here are three more places worth knowing:`),
+      steps([
+        { n: 1, title: 'Quick Guides', text: `Simple help pages for bills, housing, health care, family, and more. Start with ${link(LINKS.grantBasics, 'Grant Basics')}.` },
+        { n: 2, title: 'The FAQ Zone', text: `Answers to the questions everyone asks. ${link(LINKS.faqZone, 'Have a look')}.` },
+        { n: 3, title: 'Success Stories', text: `Real members who got their yes. Read a few. That will be you.` },
+      ]),
+      cta('Read Success Stories &rarr;', LINKS.successStories),
+      callout('yellow', 'Your weekly habit', `<strong>One class. One call. One question.</strong> Do these three things every week and you will be amazed where you are in a few months.`),
+      signoff(),
+      callout('blue', 'This is not goodbye', `This was your welcome week, but I'm not going anywhere. Watch your inbox, come see me live any time, and when you get your first yes, tell us in Success Stories. I can't wait to read yours.`),
     ],
   },
 ];
@@ -406,6 +558,30 @@ for (const e of EMAILS) {
   fs.writeFileSync(path.join(root, 'emails', 'kit', e.file), c);
   console.log(`✓ emails/kit/${e.file}`);
 }
+
+/* Machine-readable push manifest for the Kit helper session. */
+const KIT_SEQUENCE_ID = 2818978;
+fs.writeFileSync(
+  path.join(root, 'emails', 'kit', 'manifest.json'),
+  JSON.stringify(
+    {
+      sequence_id: KIT_SEQUENCE_ID,
+      note: 'kit_email_id null = create as new unpublished draft; otherwise update that email in place. Content = the matching file in this folder, verbatim.',
+      emails: EMAILS.map(e => ({
+        n: e.n,
+        file: e.file,
+        subject: e.subject,
+        preview_text: e.preheader,
+        delay_value: e.n === 1 ? 0 : 1,
+        delay_unit: 'days',
+        kit_email_id: e.kitEmailId || null,
+      })),
+    },
+    null,
+    2
+  )
+);
+console.log('✓ emails/kit/manifest.json');
 
 fs.writeFileSync(path.join(root, 'template', 'kit-master-template.html'), renderMasterTemplate());
 console.log('✓ template/kit-master-template.html');
