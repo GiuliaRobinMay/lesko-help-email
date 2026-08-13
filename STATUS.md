@@ -64,3 +64,14 @@ Giulia still owes us: app download link, business hub confirmation, resources/FA
 - 2026-08-12 13:59 UTC: email 8 'You made it! Here's your treasure map' pushed (kit id 10188000), unpublished.
 - 2026-08-12 13:59 UTC: verified all 8 emails present in sequence 2818978, positions 0-7, delays 0d then 1d each, all unpublished.
 - 2026-08-12 14:02 UTC: email 1 re-pushed with app-store instructions (no download URL exists); still unpublished.
+- 2026-08-13 10:36 UTC: email 1 'Welcome to Lesko Help! Start here' (kit id 10185361) footer-fix content pushed, template 4821884, published true.
+- 2026-08-13 10:36 UTC: email 2 'Your first step: take the tour' (kit id 10187983) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: email 3 'Let's build your list (this is the big one)' (kit id 10187986) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: email 4 'You found programs. Now what?' (kit id 10187990) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: email 5 'Stuck? This is where you get unstuck' (kit id 10187994) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: email 6 'Come talk to me. Yes, really' (kit id 10187996) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: email 7 'Dreaming of your own business?' (kit id 10187998) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: email 8 'You made it! Here's your treasure map' (kit id 10188000) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
+- 2026-08-13 10:36 UTC: verified via list_sequence_emails — all 8 emails in sequence 2818978 report email_template_id 4821884 and published true. No retries needed, no manual Styles-tab switch required.
+
+Note: the `email_template_id` param IS honoured on update (contrary to the older note under "Kit account facts") — emails 2-8 moved off the "V1" 4917344 wrapper in one pass. Sequence 2818978 is the LIVE sequence (15 subscribers, active); 2691903 was not touched.
