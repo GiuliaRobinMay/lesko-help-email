@@ -290,17 +290,11 @@ function renderEmail(e) {
             </tr></table>
             <p style="margin:18px 0 0;font-family:${SANS};font-size:12px;line-height:19px;color:${MUTED};">
               ${e.footerNote}<br>
-              {{ address }}<br>
-              <a href="{{ unsubscribe_url }}" style="color:${MUTED};">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="${LINKS.community}" style="color:${MUTED};">Open the community</a>
+              <a href="${LINKS.community}" style="color:${MUTED};">Open the community</a> &nbsp;&middot;&nbsp; <a href="{{ unsubscribe_url }}" style="color:${MUTED};">Unsubscribe</a>
             </p>
           </td></tr>
 
         </table>
-      </td></tr>
-
-      <!-- below-card tag -->
-      <tr><td align="center" style="padding:16px 0 0;font-family:${MONO};font-size:10px;letter-spacing:2px;color:${MUTED};text-transform:uppercase;">
-        ${emailSuit(e.n)}&nbsp;&nbsp;Member onboarding &middot; ${e.dayLabel}
       </td></tr>
 
     </table>
