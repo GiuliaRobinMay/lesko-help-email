@@ -74,4 +74,14 @@ Giulia still owes us: app download link, business hub confirmation, resources/FA
 - 2026-08-13 10:36 UTC: email 8 'You made it! Here's your treasure map' (kit id 10188000) footer-fix content pushed, template switched 4917344 -> 4821884, published true.
 - 2026-08-13 10:36 UTC: verified via list_sequence_emails — all 8 emails in sequence 2818978 report email_template_id 4821884 and published true. No retries needed, no manual Styles-tab switch required.
 
+- 2026-08-17 15:24 UTC: email 1 'Pay attention, {{ subscriber.first_name }}: this email decides how your grant search goes' (kit id 10185361) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 2 '🚨 Members who take the Welcome Tour find grants way faster. Take yours today' (kit id 10187983) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 3 '🚨 No call list, no grants. Let's build yours today, {{ subscriber.first_name }}' (kit id 10187986) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 4 'Grants go to people who apply. I know it's scary, {{ subscriber.first_name }}. I'll help you send yours' (kit id 10187990) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 5 'Stuck on your grant search? Get unstuck in today's class. My coaches will help you' (kit id 10187994) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 6 'It's Matthew. I answer member questions live today. Bring me yours. Yes, really' (kit id 10187996) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 7 'Want a business, a nonprofit, or a new career? I know where the money is. Let me show you' (kit id 10187998) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: email 8 'Don't stop one step before the money. Keep going. Here's how members keep winning' (kit id 10188000) final subject + preview + body pushed, template 4821884, published true.
+- 2026-08-17 15:24 UTC: verified via list_sequence_emails — all 8 subjects and preview texts in sequence 2818978 match emails/kit/manifest.json exactly, email_template_id 4821884, published true, positions 0-7, delays 0d then 1d each. No retries needed. Sequence 2691903 untouched.
+
 Note: the `email_template_id` param IS honoured on update (contrary to the older note under "Kit account facts") — emails 2-8 moved off the "V1" 4917344 wrapper in one pass. Sequence 2818978 is the LIVE sequence (15 subscribers, active); 2691903 was not touched.
