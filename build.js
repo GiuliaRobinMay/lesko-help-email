@@ -58,6 +58,7 @@ const LINKS = {
   community: 'https://lesko-help-2.mn.co/',
   roadmap: 'https://lesko-help-2.mn.co/spaces/24365840/page',   // Follow the Roadmap
   welcomeTour: 'https://lesko-help-2.mn.co/spaces/24366161',    // Daily Welcome Tour
+  tourEvent: 'https://lesko-help-2.mn.co/posts/104965991',      // WELCOME TOUR recurring event (daily 11 AM ET)
   callSheetClasses: 'https://lesko-help-2.mn.co/spaces/24440881',
   aiResearcher: 'https://lesko-help-2.mn.co/spaces/24461105',   // AI Grant Researcher
   askLeskoAI: 'https://lesko-help-2.mn.co/spaces/23670974',     // Ask Lesko AI Research Tool
@@ -354,9 +355,9 @@ const EMAILS = [
     blocks: [
       greeting(),
       para(`How was your first look at the Roadmap? Today we take step 1, and it's the easiest one: the Welcome Tour.`),
-      para(`Every day, my team gives a live tour of the community. We show you where everything is. You can ask anything you want. It takes about 30 minutes, and you leave knowing your way around.`),
-      cta(`Save my seat on today's tour &rarr;`, LINKS.welcomeTour),
-      callout('blue', `Can't make it live?`, `No problem. There's a short video in the same place. Watch it whenever suits you. Same tour, your couch.`),
+      para(`Every day at <strong style="color:${NAVY};">11 AM New York time</strong>, my team gives a live tour of the community. We show you where everything is. You can ask anything you want. In 30 minutes you know your way around like a pro.`),
+      cta(`Save my seat on today's tour &rarr;`, LINKS.tourEvent),
+      callout('blue', `Can't make it live?`, `No problem. The tours and classes are recorded. ${link(LINKS.replays, 'Watch a replay')} whenever suits you. Same tour, your couch.`),
       signoff(),
       callout('yellow', 'Tomorrow in your inbox', `We build your Call Sheet. That's your personal list of programs that fit YOU. It's where the money search really starts.`),
     ],
@@ -376,11 +377,11 @@ const EMAILS = [
       para(`Everything starts with your <strong style="color:${NAVY};">Call Sheet</strong>. It's a simple list of programs and offices that fit you: your state, your needs, your situation. When you have your list, you know exactly who to call.`),
       para(`There are 3 ways to build yours. Pick the one that feels easiest:`),
       steps([
-        { n: 1, title: 'Come to a Call Sheet Class', text: `We build your list together, live. There's also a simple instruction page in the ${link(LINKS.callSheetClasses, 'same space')}.` },
-        { n: 2, title: 'Use the AI Grant Researcher', text: `Tell it what you need. It digs through the programs for you. ${link(LINKS.aiResearcher, 'Try it here')}.` },
+        { n: 1, title: 'Use the AI Grant Researcher', text: `The fastest way. Tell it what you need and it digs for you, any hour of the day. ${link(LINKS.aiResearcher, 'Try it now')}.` },
+        { n: 2, title: 'Come to a Call Sheet Class', text: `We build your list together, live. There's also a simple instruction page in the ${link(LINKS.callSheetClasses, 'same space')}.` },
         { n: 3, title: 'Ask in the Questions Channel', text: `Not sure where to start? Just ask. My team answers every day. ${link(LINKS.questions, 'Ask here')}.` },
       ]),
-      cta(`I want my Call Sheet &rarr;`, LINKS.callSheetClasses),
+      cta(`I want my Call Sheet &rarr;`, LINKS.aiResearcher),
       callout('blue', 'No wrong choice', `All three roads end in the same place: your own list. Pick one and start today.`),
       signoff(),
       callout('yellow', 'Tomorrow in your inbox', `What to do with your list. This is the step where most people stop. Not you.`),
@@ -401,6 +402,7 @@ const EMAILS = [
       para(`When your list is ready, the next step is asking for the money. That means applications. And I know, forms are nobody's favorite thing. That's why here, we don't do them alone.`),
       para(`In our <strong style="color:${NAVY};">Application Classes</strong> we go through real applications together, step by step. Bring yours, or just watch and learn. Start with the instruction page, then join a class.`),
       cta(`I want help with my application &rarr;`, LINKS.applicationClasses),
+      callout('green', 'Not ready yet? That is okay', `Take a peek first. Ask anything in the ${link(LINKS.questions, 'Questions Channel')}, or come to a class and just listen.`),
       callout('red', 'The truth about applications', `A sent application can get a yes. A perfect application sitting on your desk cannot. Send it in.`),
       signoff(),
       callout('yellow', 'Tomorrow in your inbox', `I'll introduce you to our Group Coaching. Real coaches, real answers, every week.`),
