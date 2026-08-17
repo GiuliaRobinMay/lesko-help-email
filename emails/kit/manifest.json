@@ -5,8 +5,8 @@
     {
       "n": 1,
       "file": "01-welcome.html",
-      "subject": "Welcome to Lesko Help! Start here",
-      "preview_text": "We made you an amazing Roadmap. Take your first look today.",
+      "subject": "Pay attention, {{ subscriber.first_name }}: this email decides how your grant search goes",
+      "preview_text": "Members who follow this onboarding have 80% more chance to find their grants. Your Roadmap is waiting inside.",
       "delay_value": 0,
       "delay_unit": "days",
       "kit_email_id": 10185361
@@ -14,8 +14,8 @@
     {
       "n": 2,
       "file": "02-welcome-tour.html",
-      "subject": "Your first step: take the tour",
-      "preview_text": "Live or on video. In 30 minutes you'll know your way around.",
+      "subject": "🚨 Members who take the Welcome Tour find grants way faster. Take yours today",
+      "preview_text": "Join us live every day or watch the webinar now. In 13 minutes you know your way around like a pro.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187983
@@ -23,8 +23,8 @@
     {
       "n": 3,
       "file": "03-call-sheet.html",
-      "subject": "Let's build your list (this is the big one)",
-      "preview_text": "Your Call Sheet is your personal list of programs. Build it today, 3 easy ways.",
+      "subject": "🚨 No call list, no grants. Let's build yours today, {{ subscriber.first_name }}",
+      "preview_text": "Your personalized call list is the perfect fit for YOU. Three easy ways to create one today.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187986
@@ -32,8 +32,8 @@
     {
       "n": 4,
       "file": "04-applications.html",
-      "subject": "You found programs. Now what?",
-      "preview_text": "Applications are how you ask for the money. We do them together.",
+      "subject": "Grants go to people who apply. I know it's scary, {{ subscriber.first_name }}. I'll help you send yours",
+      "preview_text": "We walk you through real applications: making calls, sending emails, best practices.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187990
@@ -41,8 +41,8 @@
     {
       "n": 5,
       "file": "05-group-coaching.html",
-      "subject": "Stuck? This is where you get unstuck",
-      "preview_text": "Real coaches, live answers. Bring your question.",
+      "subject": "Stuck on your grant search? Get unstuck in today's class. My coaches will help you",
+      "preview_text": "Expert grant coaches, several classes a day. All questions are welcome. Or just come listen.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187994
@@ -50,8 +50,8 @@
     {
       "n": 6,
       "file": "06-ask-matthew.html",
-      "subject": "Come talk to me. Yes, really",
-      "preview_text": "I do a live session where you can ask me anything. Come!",
+      "subject": "It's Matthew. I answer member questions live today. Bring me yours. Yes, really",
+      "preview_text": "I love helping people with money programs, grants, and your specific situation. I've been doing this for 40 years.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187996
@@ -59,8 +59,8 @@
     {
       "n": 7,
       "file": "07-business-hub.html",
-      "subject": "Dreaming of your own business?",
-      "preview_text": "Programs and help for starting your own business or nonprofit.",
+      "subject": "Want a business, a nonprofit, or a new career? I know where the money is. Let me show you",
+      "preview_text": "In Lesko Pro you'll find programs, resources, classes, expert coaches, and members doing it with you.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187998
@@ -68,8 +68,8 @@
     {
       "n": 8,
       "file": "08-keep-exploring.html",
-      "subject": "You made it! Here's your treasure map",
-      "preview_text": "Quick guides, answers, and stories from members who got their yes.",
+      "subject": "Don't stop one step before the money. Keep going. Here's how members keep winning",
+      "preview_text": "Motivation, accountability, and a daily habit. That's how members win.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10188000
