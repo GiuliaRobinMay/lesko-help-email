@@ -47,6 +47,10 @@ const PHOTO =
 
 /* ------------------------------------------------- community destinations */
 
+/* Where a member goes when they are stuck. Giulia's, 2026-09-08: this has to be
+   everywhere, so it sits in the shared footer of every letter. */
+const SUPPORT = 'leskohelp@gmail.com';
+
 const LINKS = {
   community: 'https://lesko-help-2.mn.co/',
   roadmap: 'https://lesko-help-2.mn.co/spaces/24365840/page',
@@ -100,6 +104,18 @@ const cta = (label, url) => `
 const signoff = () => `
 <p style="margin:26px 0 4px;font-family:${SANS};font-size:17px;line-height:27px;color:${INK};">Talk soon,</p>
 <p style="margin:0;font-family:${SERIF};font-style:italic;font-weight:bold;font-size:30px;line-height:36px;color:${NAVY};">Matthew</p>`;
+
+/* An appendix below the signature, for something the reader may need again but
+   that should not weigh down the letter itself. Same hairline and mono kicker
+   as the letterhead, so it reads as part of the stationery. */
+const recap = (heading, list, note) => `
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:30px 0 0;">
+  <tr><td style="border-top:1px solid ${RULE};padding-top:18px;">
+    <div style="font-family:${MONO};font-size:10px;letter-spacing:1.6px;color:${MUTED};text-transform:uppercase;padding-bottom:14px;">${heading}</div>
+    ${steps(list)}${note ? `
+    <p style="margin:0;font-family:${SANS};font-size:16px;line-height:26px;color:${INK};">${note}</p>` : ''}
+  </td></tr>
+</table>`;
 
 /* The P.S. carries the nudge towards the next email. */
 const ps = html => `
@@ -157,7 +173,7 @@ function renderEmail(e) {
         ${p(`Hi {{ subscriber.first_name }},`)}
         ${e.blocks.join('\n        ')}
         ${signoff()}
-        ${ps(e.ps)}
+        ${ps(e.ps)}${e.recap || ''}
       </td></tr>
 
       <!-- footer -->
@@ -165,6 +181,7 @@ function renderEmail(e) {
         <div style="border-top:1px solid ${RULE};padding-top:16px;">
           <p style="margin:0;font-family:${SANS};font-size:12px;line-height:20px;color:${MUTED};">
             You're getting this because you joined the Lesko Help community.<br>
+            Need a hand? Write to <a href="mailto:${SUPPORT}" style="color:${MUTED};">${SUPPORT}</a> and a real person will answer.<br>
             <a href="${LINKS.community}" style="color:${MUTED};">Open the community</a> &nbsp;&middot;&nbsp; <a href="{{ unsubscribe_url }}" style="color:${MUTED};">Unsubscribe</a>
           </p>
         </div>
@@ -200,8 +217,12 @@ function emit({ root, dir, preview, title, sequenceId, emails, delayFor }) {
   for (const d of [dir, path.join(dir, 'kit'), 'preview']) {
     fs.mkdirSync(path.join(root, d), { recursive: true });
   }
-  for (const f of fs.readdirSync(path.join(root, dir))) {
-    if (f.endsWith('.html')) fs.unlinkSync(path.join(root, dir, f));
+  /* Clear both folders, so a renamed letter cannot leave a stale twin behind for
+     somebody to push to Kit by mistake. The manifest is not html, so it stays. */
+  for (const d of [dir, path.join(dir, 'kit')]) {
+    for (const f of fs.readdirSync(path.join(root, d))) {
+      if (f.endsWith('.html')) fs.unlinkSync(path.join(root, d, f));
+    }
   }
 
   let problems = 0;
@@ -214,6 +235,12 @@ function emit({ root, dir, preview, title, sequenceId, emails, delayFor }) {
     if (!visible.includes('{{ unsubscribe_url }}')) { console.error(`✗ ${e.file}: no unsubscribe tag, Kit will refuse to publish`); problems++; }
     if (!visible.includes('{{ subscriber.first_name }}')) { console.error(`✗ ${e.file}: personalization tag missing`); problems++; }
     if (visible.includes('{{ message_content }}') || visible.includes('{{ address }}')) { console.error(`✗ ${e.file}: template-only tag left in`); problems++; }
+    /* Members DO set a password, after the 6-digit code. An earlier draft said
+       otherwise and would have stranded people at the last step. */
+    if (/no password|never need a password|without a password/i.test(visible)) {
+      console.error(`✗ ${e.file}: says there is no password. There is one, members choose it after the code.`);
+      problems++;
+    }
 
     fs.writeFileSync(path.join(root, dir, e.file), full);
     fs.writeFileSync(path.join(root, dir, 'kit', e.file), kit);
@@ -287,4 +314,6 @@ ${emails.map(e => `<section class="e">
   console.log('\nAll checks passed.');
 }
 
-module.exports = { LINKS, link, b, p, steps, cta, emit };
+const mailto = () => `<a href="mailto:${SUPPORT}" style="color:${BLUE};font-weight:bold;">${SUPPORT}</a>`;
+
+module.exports = { LINKS, SUPPORT, link, mailto, b, p, steps, cta, recap, emit };

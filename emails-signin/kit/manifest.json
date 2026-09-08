@@ -6,25 +6,25 @@
       "n": 1,
       "file": "01-your-account-is-ready.html",
       "subject": "Your Lesko Help account is ready and waiting for you",
-      "preview_text": "You haven't been inside yet. It takes one minute, and there's no password.",
+      "preview_text": "You haven't been inside yet. Your first sign-in takes about a minute.",
       "delay_value": 0,
       "delay_unit": "days",
       "kit_email_id": 10284238
     },
     {
       "n": 2,
-      "file": "02-no-password.html",
-      "subject": "The reason you can't get in: there is no password",
-      "preview_text": "You're not looking for a password. You're looking for a 6-digit code.",
+      "file": "02-make-your-own-password.html",
+      "subject": "Nobody sent you a password. You make your own",
+      "preview_text": "First a 6-digit code, then you pick your password. That's the part people miss.",
       "delay_value": 2,
       "delay_unit": "days",
       "kit_email_id": 10284240
     },
     {
       "n": 3,
-      "file": "03-whats-inside.html",
-      "subject": "What's happening inside the community while you're out here",
-      "preview_text": "Live classes every day, coaches who answer, and members finding real money.",
+      "file": "03-we-miss-you.html",
+      "subject": "We miss you, and your seat is still empty",
+      "preview_text": "Coaches answer questions all day long. None of them are yours yet.",
       "delay_value": 3,
       "delay_unit": "days",
       "kit_email_id": 10284251
@@ -41,8 +41,8 @@
     {
       "n": 5,
       "file": "05-a-hand-if-youre-stuck.html",
-      "subject": "My last note about this, and a hand if you're stuck",
-      "preview_text": "If something isn't working, tell us. A real person will help you get in.",
+      "subject": "I think you might be stuck. Let us help you in",
+      "preview_text": "Write to us and one of our team will do their best to get you in.",
       "delay_value": 3,
       "delay_unit": "days",
       "kit_email_id": 10284268
