@@ -1,12 +1,12 @@
 {
   "sequence_id": 2818978,
-  "note": "kit_email_id null = create as new unpublished draft; otherwise update that email in place. Content = the matching file in this folder, verbatim.",
+  "note": "kit_email_id null = create as new draft; otherwise update in place. Content = the matching file in this folder, verbatim.",
   "emails": [
     {
       "n": 1,
       "file": "01-welcome.html",
-      "subject": "Pay attention, {{ subscriber.first_name }}: this email decides how your grant search goes",
-      "preview_text": "Members who follow this onboarding have 80% more chance to find their grants. Your Roadmap is waiting inside.",
+      "subject": "Start here: your Roadmap to your first grant",
+      "preview_text": "Welcome. Open your Roadmap and do three small things today.",
       "delay_value": 0,
       "delay_unit": "days",
       "kit_email_id": 10185361
@@ -14,8 +14,8 @@
     {
       "n": 2,
       "file": "02-welcome-tour.html",
-      "subject": "🚨 Members who take the Welcome Tour find grants way faster. Take yours today",
-      "preview_text": "Join us live every day or watch the webinar now. In 13 minutes you know your way around like a pro.",
+      "subject": "Step 1: let me show you around the community",
+      "preview_text": "A live tour every day at 11 AM New York time. Or watch it whenever you like.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187983
@@ -23,8 +23,8 @@
     {
       "n": 3,
       "file": "03-call-sheet.html",
-      "subject": "🚨 No call list, no grants. Let's build yours today, {{ subscriber.first_name }}",
-      "preview_text": "Your personalized call list is the perfect fit for YOU. Three easy ways to create one today.",
+      "subject": "Step 2: build your personal grant call list",
+      "preview_text": "Programs that fit you, not ten thousand search results. Three easy ways to make yours.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187986
@@ -32,8 +32,8 @@
     {
       "n": 4,
       "file": "04-applications.html",
-      "subject": "Grants go to people who apply. I know it's scary, {{ subscriber.first_name }}. I'll help you send yours",
-      "preview_text": "We walk you through real applications: making calls, sending emails, best practices.",
+      "subject": "Step 3: applying for grants, with help from us",
+      "preview_text": "Nobody fills in these forms alone here. We go through real applications together.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187990
@@ -41,8 +41,8 @@
     {
       "n": 5,
       "file": "05-group-coaching.html",
-      "subject": "Stuck on your grant search? Get unstuck in today's class. My coaches will help you",
-      "preview_text": "Expert grant coaches, several classes a day. All questions are welcome. Or just come listen.",
+      "subject": "Step 4: get your questions answered by a coach",
+      "preview_text": "Everybody gets stuck. This is the room where you get unstuck.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187994
@@ -50,8 +50,8 @@
     {
       "n": 6,
       "file": "06-ask-matthew.html",
-      "subject": "It's Matthew. I answer member questions live today. Bring me yours. Yes, really",
-      "preview_text": "I love helping people with money programs, grants, and your specific situation. I've been doing this for 40 years.",
+      "subject": "Step 5: come and ask me anything, live",
+      "preview_text": "I answer member questions live. About money, programs, and your own situation.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187996
@@ -59,8 +59,8 @@
     {
       "n": 7,
       "file": "07-business-hub.html",
-      "subject": "Want a business, a nonprofit, or a new career? I know where the money is. Let me show you",
-      "preview_text": "In Lesko Pro you'll find programs, resources, classes, expert coaches, and members doing it with you.",
+      "subject": "If you want your own business, this one is for you",
+      "preview_text": "Grant money exists for starting a business, a nonprofit, or a new career.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10187998
@@ -68,8 +68,8 @@
     {
       "n": 8,
       "file": "08-keep-exploring.html",
-      "subject": "Don't stop one step before the money. Keep going. Here's how members keep winning",
-      "preview_text": "Motivation, accountability, and a daily habit. That's how members win.",
+      "subject": "The habit that finds members their grants",
+      "preview_text": "Guides, answers, and real stories from members who got their yes.",
       "delay_value": 1,
       "delay_unit": "days",
       "kit_email_id": 10188000
