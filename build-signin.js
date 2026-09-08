@@ -34,12 +34,18 @@
 
 const { LINKS, link, mailto, b, p, cta, recap, emit } = require('./letter');
 
-/* The four steps, in the same words in every letter. */
+/* The five steps, in the same words in every letter.
+   The important thing here, and Giulia was firm about it: they do NOT have to
+   go digging for some old code we sent days ago. They ASK for the code from the
+   page, and it arrives while they are sitting there. So the instructions work
+   the same whenever somebody opens the letter, and no step depends on an email
+   they may already have lost or deleted. */
 const SIGNIN = [
-  { title: 'Go to the community', text: `Open ${link(LINKS.community, 'lesko-help-2.mn.co')}.` },
-  { title: 'Type in your email address', text: `The one we send these letters to, the same address this one arrived at. That's how we find your account.` },
-  { title: 'We email you a 6-digit code', text: `It comes from ${b('Lesko Help 2')}, and the subject line says "Lesko Help 2 Account Email Verification". If it's not in your inbox, look in your spam folder. The code works for 30 minutes.` },
-  { title: 'Type the code in, then pick your password', text: `Nobody sent you one, you make it up yourself right there. Write it down somewhere safe, because that's how you'll get in from now on.` },
+  { title: 'Click the link', text: `Go to ${link(LINKS.community, 'lesko-help-2.mn.co')}.` },
+  { title: 'Type in your email address', text: `The same one we send these letters to, the address this letter arrived at. That's how we find your account.` },
+  { title: 'Click "Send me the code"', text: `We email you a fresh 6-digit code straight away. You ask for it, so you never have to go looking for an old one.` },
+  { title: 'Fetch the code and come back', text: `It lands in your inbox in a minute or two, from ${b('Lesko Help 2')}. If you don't see it, look in your spam folder. Type it in on the page. You have 30 minutes.` },
+  { title: 'Make up your own password', text: `Nobody sent you one, you choose it yourself right there. Write it down somewhere safe, because that's how you'll get in from now on.` },
 ];
 
 const INSTRUCTIONS = recap(
@@ -75,7 +81,7 @@ const EMAILS = [
     blocks: [
       p(`If you tried to get in and gave up, I think I know why. You went hunting through your inbox for a password.`),
       p(`There was never one to find. ${b(`We don't send you a password.`)} You make your own, right after we check the address is yours.`),
-      p(`Your email address, then the 6-digit code we mail you, then a password you pick. If the code isn't in your inbox, look in your spam folder.`),
+      p(`And you don't have to go hunting for the code either. You ask for it yourself on the page, and it lands in your inbox a minute later. The steps are at the bottom.`),
       cta('Set up my account', LINKS.community),
     ],
     ps: `If your code ran out, just ask for another. They're free and you can have as many as you need.`,
