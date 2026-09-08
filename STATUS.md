@@ -104,23 +104,38 @@ Note: the address line at the bottom of every email is appended by Kit itself (C
 
 ### Correct address research (2026-09-08)
 
-Recommended replacement, pending Giulia/Matthew's confirmation:
+Use the D.C. address. Giulia called this correctly:
 
 ```
-Information USA, Inc.
-3909 Prospect St
-Kensington, MD 20895
+Lesko Help
+1851 Columbia Rd NW, #402
+Washington, DC 20009
 ```
 
-Evidence (converging, from search snippets only — lesko.help, lesko.com, leskosupport.com, free.lesko.com and bbb.org are ALL blocked by this environment's egress proxy, so none of these pages were read directly):
-- Lesko's own support/refund and privacy pages quote "Information USA, Inc, 3909 Prospect st, Kensington, MD 20895", phone 1-800-955-7693, customerservice@lesko.com.
-- Yelp business listing "Information USA Inc", 3909 Prospect St, Kensington MD 20895, (800) 955-7693, site lesko.com (updated Oct 2025).
-- Corporate registration records link Information USA, Inc. to that address with Matthew Lesko as principal.
+Evidence (search snippets only — every lesko domain plus bbb.org is blocked by this
+environment's egress proxy, so no page was read directly):
+- **leskosupport.com is Lesko Help's current support site, and it publishes this exact
+  address on its Contact Us page and again on its Contest Rules page as the sponsor
+  address.** This is the strongest source: it is their own live site, for this product.
+- Matthew Lesko's LinkedIn lists him in Washington, District of Columbia.
+- 1851 Columbia Rd NW is a real building in Adams Morgan, DC 20009 (Zillow/Redfin/
+  BlockShopper). #402 is a unit in it.
 
-Caveats to raise before using it:
-- The same address appears in public-records aggregators as Matthew's home address. It is already published on Lesko's own site, so this is not new exposure, but Matthew should okay it. A PO Box / UPS Store box is the standard alternative if he'd rather not.
-- The BBB profile for the older entity "Lesko Help 1995" (Silver Spring, MD) is marked no longer in business — do not use that one.
-- Best confirmation is an actual Lesko purchase receipt or the address on the current checkout/terms pages, which is what members have already seen.
+Do NOT use these, both of which surfaced first and are wrong or stale:
+- `Information USA, Inc., 3909 Prospect St, Kensington, MD 20895` — the older
+  Information USA customer-service address still shown on lesko.com. Superseded.
+- `Lesko Help 1995`, Silver Spring MD — BBB marks that entity as no longer in business.
+- Several searches returned a mangled hybrid, "1851 Columbia RD NW #402 Kensington, MD
+  20895", which merges the DC street address with the Maryland city/zip. It is not a
+  real address. Ignore it.
+
+Open question for Giulia/Matthew: whether the line above the address should read
+"Lesko Help" or a legal entity name (e.g. Information USA, Inc.). The support site
+appears to use plain "Lesko Help". Whatever Kit shows should match the website.
+
+Note #402 is an apartment, so this is likely Matthew's own residence — but it is already
+the address Lesko Help publishes on its own contact and contest pages, so putting it in
+the email footer adds no new exposure and makes the emails consistent with the site.
 
 ## Still open
 
