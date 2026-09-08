@@ -143,29 +143,52 @@ For the 625 buyers (471 paying) who never opened their account. Built 2026-09-08
 with `node build-signin.js`; output in `emails-signin/`. Giulia had already deleted
 the 3 old emails, so all five were created fresh.
 
-The whole sequence turns on one fact this audience does not know: THERE IS NO
-PASSWORD. Signing in is an email address plus a 6-digit code. Almost everyone who
-gets stuck is hunting for a password that does not exist, so the four steps repeat
-in most letters: they will read one letter, not five, and whichever one they read
-has to get them in on its own.
+**THE FACT THE SEQUENCE TURNS ON: nobody ever sent them a password, they make
+their own.** First sign-in goes email address, then a 6-digit code we mail them,
+then they choose a password on the spot. Almost everyone who is stuck is hunting
+an inbox for a password that was never sent.
+
+Do NOT write "there is no password" anywhere. An early draft did, Giulia caught
+it (2026-09-08: "That couldn't be further from the truth... it will create
+confusion"), and `letter.js` now fails the build on that phrasing so it cannot
+come back. Members do set a password; they just invent it at the last step.
+
+**Is the 6-digit code a fixed one we could print in the email?** No. Two proofs:
+the code expires after 30 minutes, and a generic code would never expire; and the
+community's Questions Channel is full of members talking about *their own*
+password ("my email and password not working", "I've tried every password I
+have"). It is generated per person per request, so printing one would be wrong
+for all 625 recipients.
+
+Structure, per Giulia: bodies are three or four short paragraphs, then the button.
+The four sign-in steps sit BELOW the signature in every letter under "Lost the
+instructions? Here they are again", followed by the support address. Keeping the
+steps out of the body is what lets the body stay short, and it means whichever
+single letter somebody opens can get them in on its own.
 
 | # | Kit id | Delay | Subject |
 |---|--------|-------|---------|
 | 1 | 10284238 | day 1 | Your Lesko Help account is ready and waiting for you |
-| 2 | 10284240 | +2 days | The reason you can't get in: there is no password |
-| 3 | 10284251 | +3 days | What's happening inside the community while you're out here |
+| 2 | 10284240 | +2 days | Nobody sent you a password. You make your own |
+| 3 | 10284251 | +3 days | We miss you, and your seat is still empty |
 | 4 | 10284254 | +3 days | The members finding grant money all did this one thing first |
-| 5 | 10284268 | +3 days | My last note about this, and a hand if you're stuck |
+| 5 | 10284268 | +3 days | I think you might be stuck. Let us help you in |
 
 All five: template 4821884, published true, all send days, positions 0-4. Verified
-via list_sequence_emails. The sequence is still on `hold: true` with 0 subscribers,
-so nothing sends until Giulia takes it off hold and adds people.
+against the local files: subjects, previews, delays and bodies all match. Letters 3
+and 4 carry one or two extra invisible `&nbsp;&zwnj;` spacers in the preheader
+padding (91 and 92 rather than 90) from hand-assembly; that padding only stops
+inbox previews leaking body text and renders as nothing. Re-running
+`node build-signin.js` and re-pushing normalises it.
 
-Open on this sequence:
-- **Email 5 says "just hit reply to this email".** Replies go to matthew@lesko.help.
-  Somebody has to be watching that mailbox, or point it at the real support desk
-  (leskosupport.com) instead. Giulia to confirm.
-- QR code deliberately left out. Giulia's call, she wants to figure it out first.
+The sequence is still on `hold: true` with 0 subscribers, so nothing sends until
+Giulia takes it off hold and adds people.
+
+Letter 5 does NOT say it is the last one. Giulia: "we will never give up on them",
+and she does not want it dramatic. It reads as reaching out to somebody who got
+stuck, and ends by pointing at the team.
+
+QR code deliberately left out. Giulia's call, she wants to figure it out first.
 
 ## Still open
 
