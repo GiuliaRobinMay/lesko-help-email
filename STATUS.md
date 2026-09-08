@@ -100,7 +100,27 @@ Note: the `update_sequence_email` MCP param for the email is `id`, NOT `email_id
 
 Note: the `email_template_id` param IS honoured on update (contrary to the older note under "Kit account facts") — emails 2-8 moved off the "V1" 4917344 wrapper in one pass. Sequence 2818978 is the LIVE sequence (15 subscribers, active); 2691903 was not touched.
 
-Note: the address line at the bottom of every email is appended by Kit itself (CAN-SPAM requirement), not by our HTML. It cannot be removed via the MCP. To change it from Kit's default Seattle PMB to Lesko's real address: Kit → Settings → Email.
+Note: the address line at the bottom of every email is appended by Kit itself (CAN-SPAM requirement), not by our HTML. It cannot be removed or changed via the MCP/API — Kit stores it on the account settings page and it feeds the `{{ address }}` variable. Currently showing Kit's free shared address: 600 1st Ave, Ste 330 PMB 92768, Seattle, WA 98104-2246. Change it in Kit → Settings → Email. It applies account-wide, so no email needs re-pushing after the change.
+
+### Correct address research (2026-09-08)
+
+Recommended replacement, pending Giulia/Matthew's confirmation:
+
+```
+Information USA, Inc.
+3909 Prospect St
+Kensington, MD 20895
+```
+
+Evidence (converging, from search snippets only — lesko.help, lesko.com, leskosupport.com, free.lesko.com and bbb.org are ALL blocked by this environment's egress proxy, so none of these pages were read directly):
+- Lesko's own support/refund and privacy pages quote "Information USA, Inc, 3909 Prospect st, Kensington, MD 20895", phone 1-800-955-7693, customerservice@lesko.com.
+- Yelp business listing "Information USA Inc", 3909 Prospect St, Kensington MD 20895, (800) 955-7693, site lesko.com (updated Oct 2025).
+- Corporate registration records link Information USA, Inc. to that address with Matthew Lesko as principal.
+
+Caveats to raise before using it:
+- The same address appears in public-records aggregators as Matthew's home address. It is already published on Lesko's own site, so this is not new exposure, but Matthew should okay it. A PO Box / UPS Store box is the standard alternative if he'd rather not.
+- The BBB profile for the older entity "Lesko Help 1995" (Silver Spring, MD) is marked no longer in business — do not use that one.
+- Best confirmation is an actual Lesko purchase receipt or the address on the current checkout/terms pages, which is what members have already seen.
 
 ## Still open
 
