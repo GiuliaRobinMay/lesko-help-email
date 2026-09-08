@@ -85,4 +85,25 @@ Giulia still owes us: app download link, business hub confirmation, resources/FA
 - 2026-08-17 15:24 UTC: verified via list_sequence_emails — all 8 subjects and preview texts in sequence 2818978 match emails/kit/manifest.json exactly, email_template_id 4821884, published true, positions 0-7, delays 0d then 1d each. No retries needed. Sequence 2691903 untouched.
 - 2026-08-17 16:26 UTC: first-person CTA bodies pushed to all 8 emails in sequence 2818978 (subjects/previews unchanged, template 4821884, published true); verified via list_sequence_emails and get_sequence_email (email 1 contains "Show me my Roadmap"); emails 2-4 then re-pushed with the concurrent click-rate-fix bodies (commit 6500c50) after the branch moved mid-run, re-verified all 8 published. Sequence 2691903 untouched.
 
+- 2026-09-08: LETTER REDESIGN pushed to all 8 emails in sequence 2818978. New letterhead (Matthew's Mighty Networks photo, "Lesko Help" wordmark, "A LETTER FROM MATTHEW" kicker, card suit symbols), off-white paper #FFFDF8 on #F2F0EA, serif italic "Matthew" sign-off, softened subject lines. All pushed with template 4821884, published true:
+  - email 1 'Start here: your Roadmap to your first grant' (kit id 10185361)
+  - email 2 'Step 1: let me show you around the community' (kit id 10187983)
+  - email 3 'Step 2: build your personal grant call list' (kit id 10187986)
+  - email 4 'Step 3: applying for grants, with help from us' (kit id 10187990)
+  - email 5 'Step 4: get your questions answered by a coach' (kit id 10187994)
+  - email 6 'Step 5: come and ask me anything, live' (kit id 10187996)
+  - email 7 'If you want your own business, this one is for you' (kit id 10187998)
+  - email 8 'The habit that finds members their grants' (kit id 10188000)
+- 2026-09-08: verified via list_sequence_emails — all 8 subjects and preview texts match emails/kit/manifest.json exactly, email_template_id 4821884, published true, positions 0-7, delays 0d then 1d each. Sequence 2691903 untouched.
+
+Note: the `update_sequence_email` MCP param for the email is `id`, NOT `email_id` (an `email_id` call fails with "Missing required arguments: id").
+
 Note: the `email_template_id` param IS honoured on update (contrary to the older note under "Kit account facts") — emails 2-8 moved off the "V1" 4917344 wrapper in one pass. Sequence 2818978 is the LIVE sequence (15 subscribers, active); 2691903 was not touched.
+
+Note: the address line at the bottom of every email is appended by Kit itself (CAN-SPAM requirement), not by our HTML. It cannot be removed via the MCP. To change it from Kit's default Seattle PMB to Lesko's real address: Kit → Settings → Email.
+
+## Still open
+
+- Swap in Giulia's Kit-hosted photo URL when she provides it (currently the Mighty Networks imgix URL).
+- Build the 5-email "never signed in" sequence (625 buyers, 471 paying, never accessed their account) in this same letter branding. Days 1, +2, +3, +3, +3. Sign-in flow: go to https://lesko-help-2.mn.co/, enter the email address the mail was sent to, get a 6-digit code from "Lesko Help 2 <lesko-help-2@mn.co>" subject "Lesko Help 2 Account Email Verification", valid 30 minutes, check spam, NO PASSWORD. Grateful "we're missing you" tone, people are finding grants. No QR code yet (Giulia's call). Target sequence: "(BTB) Never Signed In — Get Started" id 2865986.
+- Await the Kit product specialist's findings on the open-rate question.
