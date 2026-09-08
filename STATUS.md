@@ -137,8 +137,38 @@ Note #402 is an apartment, so this is likely Matthew's own residence — but it 
 the address Lesko Help publishes on its own contact and contest pages, so putting it in
 the email footer adds no new exposure and makes the emails consistent with the site.
 
+## Sequence 2: "(BTB) Never Signed In — Get Started", id 2865986
+
+For the 625 buyers (471 paying) who never opened their account. Built 2026-09-08
+with `node build-signin.js`; output in `emails-signin/`. Giulia had already deleted
+the 3 old emails, so all five were created fresh.
+
+The whole sequence turns on one fact this audience does not know: THERE IS NO
+PASSWORD. Signing in is an email address plus a 6-digit code. Almost everyone who
+gets stuck is hunting for a password that does not exist, so the four steps repeat
+in most letters: they will read one letter, not five, and whichever one they read
+has to get them in on its own.
+
+| # | Kit id | Delay | Subject |
+|---|--------|-------|---------|
+| 1 | 10284238 | day 1 | Your Lesko Help account is ready and waiting for you |
+| 2 | 10284240 | +2 days | The reason you can't get in: there is no password |
+| 3 | 10284251 | +3 days | What's happening inside the community while you're out here |
+| 4 | 10284254 | +3 days | The members finding grant money all did this one thing first |
+| 5 | 10284268 | +3 days | My last note about this, and a hand if you're stuck |
+
+All five: template 4821884, published true, all send days, positions 0-4. Verified
+via list_sequence_emails. The sequence is still on `hold: true` with 0 subscribers,
+so nothing sends until Giulia takes it off hold and adds people.
+
+Open on this sequence:
+- **Email 5 says "just hit reply to this email".** Replies go to matthew@lesko.help.
+  Somebody has to be watching that mailbox, or point it at the real support desk
+  (leskosupport.com) instead. Giulia to confirm.
+- QR code deliberately left out. Giulia's call, she wants to figure it out first.
+
 ## Still open
 
-- Swap in Giulia's Kit-hosted photo URL when she provides it (currently the Mighty Networks imgix URL).
-- Build the 5-email "never signed in" sequence (625 buyers, 471 paying, never accessed their account) in this same letter branding. Days 1, +2, +3, +3, +3. Sign-in flow: go to https://lesko-help-2.mn.co/, enter the email address the mail was sent to, get a 6-digit code from "Lesko Help 2 <lesko-help-2@mn.co>" subject "Lesko Help 2 Account Email Verification", valid 30 minutes, check spam, NO PASSWORD. Grateful "we're missing you" tone, people are finding grants. No QR code yet (Giulia's call). Target sequence: "(BTB) Never Signed In — Get Started" id 2865986.
+- Swap in Giulia's Kit-hosted photo URL when she provides it (currently the Mighty
+  Networks imgix URL). One constant, `PHOTO` in `letter.js`, changes both sequences.
 - Await the Kit product specialist's findings on the open-rate question.
